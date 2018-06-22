@@ -6,6 +6,7 @@ class Skrill
 {
     public const FIELD_AMOUNT = 'amount_paid';
     public const FIELD_PAYMENT_DATE = 'issue_date';
+
     /**
      * @var array
      */
