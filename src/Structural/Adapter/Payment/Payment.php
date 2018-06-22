@@ -17,7 +17,7 @@ class Payment implements PaymentInterface
     {
         $payment = [
             PaymentInterface::FIELD_AMOUNT => $value,
-            PaymentInterface::FIELD_PAYMENT_DATE => new \DateTime()
+            PaymentInterface::FIELD_PAYMENT_DATE => new \DateTime(),
         ];
         array_push($this->transactions, $payment);
     }
