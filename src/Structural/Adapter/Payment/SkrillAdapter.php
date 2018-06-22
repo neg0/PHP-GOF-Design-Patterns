@@ -7,20 +7,20 @@ class SkrillAdapter implements PaymentInterface
     /**
      * @var Skrill
      */
-    private $skrillPayment;
+    private $skrill;
 
     public function __construct(Skrill $skrill)
     {
-        $this->skrillPayment = $skrill;
+        $this->skrill = $skrill;
     }
 
     public function pay(float $value): void
     {
-        $this->skrillPayment->makePayment($value);
+        $this->skrill->makePayment($value);
     }
 
     public function getTransactions(): array
     {
-        return $this->skrillPayment->getInvoices();
+        return $this->skrill->getInvoices();
     }
 }

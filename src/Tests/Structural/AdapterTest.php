@@ -5,7 +5,7 @@ namespace Tests\Structural;
 use PHPUnit\Framework\TestCase;
 use Structural\Adapter\Payment\Payment;
 use Structural\Adapter\Payment\PaymentInterface;
-use Structural\Adapter\Payment\Paypal;
+use Structural\Adapter\Payment\PayPal;
 use Structural\Adapter\Payment\PayPalAdapter;
 use Structural\Adapter\Payment\Skrill;
 use Structural\Adapter\Payment\SkrillAdapter;
@@ -20,7 +20,7 @@ class AdapterTest extends TestCase
     private $sut;
 
     /**
-     * @var Paypal
+     * @var PayPal
      */
     private $payPalPayment;
 
@@ -32,7 +32,7 @@ class AdapterTest extends TestCase
     public function setUp()
     {
         $this->sut = new Payment();
-        $this->payPalPayment = new Paypal();
+        $this->payPalPayment = new PayPal();
         $this->skrillPayment = new Skrill();
     }
 
@@ -61,9 +61,9 @@ class AdapterTest extends TestCase
         $paymentProvider->pay(self::PAYMENT_AMOUNT);
 
         foreach ($paymentProvider->getTransactions() as $transaction) {
-            $this->assertInstanceOf(\DateTime::class, $transaction[Paypal::FIELD_PAYMENT_DATE]);
-            $this->assertTrue(is_numeric($transaction[Paypal::FIELD_AMOUNT]));
-            $this->assertTrue(is_string($transaction[Paypal::FIELD_PAYMENT_ID]));
+            $this->assertInstanceOf(\DateTime::class, $transaction[PayPal::FIELD_PAYMENT_DATE]);
+            $this->assertTrue(is_numeric($transaction[PayPal::FIELD_AMOUNT]));
+            $this->assertTrue(is_string($transaction[PayPal::FIELD_PAYMENT_ID]));
         }
     }
 

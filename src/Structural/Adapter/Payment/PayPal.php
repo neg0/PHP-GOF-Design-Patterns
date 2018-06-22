@@ -2,7 +2,7 @@
 
 namespace Structural\Adapter\Payment;
 
-class Paypal
+class PayPal
 {
     public const FIELD_AMOUNT = 'money_value';
     public const FIELD_PAYMENT_DATE = 'payment_date';

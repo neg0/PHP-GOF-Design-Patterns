@@ -5,22 +5,22 @@ namespace Structural\Adapter\Payment;
 class PayPalAdapter implements PaymentInterface
 {
     /**
-     * @var Paypal
+     * @var PayPal
      */
-    private $payPalPayment;
+    private $payPal;
 
-    public function __construct(Paypal $paypal)
+    public function __construct(PayPal $payPal)
     {
-        $this->payPalPayment = $paypal;
+        $this->payPal = $payPal;
     }
 
     public function pay(float $value): void
     {
-        $this->payPalPayment->createPayment($value);
+        $this->payPal->createPayment($value);
     }
 
     public function getTransactions(): array
     {
-        return $this->payPalPayment->getHistory();
+        return $this->payPal->getHistory();
     }
 }
