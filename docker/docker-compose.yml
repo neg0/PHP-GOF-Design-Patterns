@@ -1,0 +1,17 @@
+version: '3'
+services:
+  php:
+    image: php:7.2-cli-patterns
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: php-patterns-ps
+    volumes:
+      - '../:/usr/local/patterns'
+    tty: true
+    networks:
+      - patterns
+
+networks:
+  patterns:
+    driver: bridge
