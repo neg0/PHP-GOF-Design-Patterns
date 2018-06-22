@@ -20,7 +20,7 @@ class Skrill
     {
         $payment = [
             self::FIELD_AMOUNT => $amount,
-            self::FIELD_PAYMENT_DATE => new \DateTime()
+            self::FIELD_PAYMENT_DATE => new \DateTime(),
         ];
 
         array_push($this->invoices, $payment);

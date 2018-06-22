@@ -27,6 +27,12 @@ COPY docker/xdebug.ini /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
     && composer --version
 
+COPY /docker/entrypoint.sh /usr/local/bin/
+
 RUN mkdir +p /usr/local/patterns
+
+COPY /composer.json /usr/local/patterns/
+
+RUN entrypoint.sh
 
 WORKDIR /usr/local/patterns
