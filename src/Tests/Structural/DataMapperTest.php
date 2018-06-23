@@ -3,13 +3,14 @@
 namespace Tests\Structural;
 
 use PHPUnit\Framework\TestCase;
-use Structural\DataMapper\StorageAdapter;
-use Structural\DataMapper\User;
-use Structural\DataMapper\UserMapper;
+use Structural\DataMapper\User\StorageAdapter;
+use Structural\DataMapper\User\User;
+use Structural\DataMapper\User\UserMapper;
 
 class DataMapperTest extends TestCase
 {
     private const USER_ID = 1;
+
     private const MOCK_DATA = [
         self::USER_ID => [
             User::FIELD_USERNAME => 'johny92',

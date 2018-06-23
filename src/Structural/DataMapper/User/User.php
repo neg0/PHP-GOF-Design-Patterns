@@ -1,6 +1,6 @@
 <?php
 
-namespace Structural\DataMapper;
+namespace Structural\DataMapper\User;
 
 class User
 {
