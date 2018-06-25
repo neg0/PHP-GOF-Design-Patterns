@@ -19,11 +19,6 @@ class User
      */
     private $birthDay;
 
-    /**
-     * @var string
-     */
-    private $placeOfBirth;
-
     public function __construct(
         string $firstName,
         string $lastName,
@@ -33,7 +28,6 @@ class User
         $this->firstName = $firstName;
         $this->lastName = $lastName;
         $this->birthDay = $birthDay;
-        $this->placeOfBirth = $placeOfBirth;
     }
 
     public function getFirstName(): string
@@ -64,15 +58,5 @@ class User
     public function setBirthDay(\DateTime $birthDay): void
     {
         $this->birthDay = $birthDay;
-    }
-
-    public function getPlaceOfBirth(): string
-    {
-        return $this->placeOfBirth;
-    }
-
-    public function setPlaceOfBirth(string $placeOfBirth): void
-    {
-        $this->placeOfBirth = $placeOfBirth;
     }
 }

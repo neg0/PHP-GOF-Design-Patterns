@@ -23,6 +23,7 @@ class BirthdayCardService
 
     private function checkUserBirthDay(User $user): bool
     {
-        return $user->getBirthDay()->format('Ymd') === new \DateTime('Ymd');
+        return $user->getBirthDay()->format('Ymd') ===
+            (new \DateTime('now'))->format('Ymd');
     }
 }
