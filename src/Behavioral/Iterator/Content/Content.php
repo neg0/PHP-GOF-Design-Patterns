@@ -8,7 +8,7 @@ use Ramsey\Uuid\UuidInterface;
 
 class Content
 {
-    private const ALLOWED_TYPES = ['video', 'audio', 'powerpoint'];
+    private const ALLOWED_TYPES = ['video', 'audio', 'powerpoint', 'book', 'article'];
     private const TIME_ZONE = 'UTC';
 
     /**

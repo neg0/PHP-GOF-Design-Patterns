@@ -7,16 +7,16 @@ class ContentIterator implements \Iterator
     /**
      * @var array
      */
-    private $contentItems;
+    private $contentItems = [];
 
     /**
      * @var int
      */
     private $currentIndex = 0;
 
-    public function add(Content $contents): void
+    public function add(Content $content): void
     {
-        array_push($this->contentItems, $contents);
+        array_push($this->contentItems, $content);
     }
 
     public function remove(Content $contentToRemove): void
@@ -34,7 +34,7 @@ class ContentIterator implements \Iterator
         $this->contentItems = array_values($this->contentItems);
     }
 
-    public function current()
+    public function current(): Content
     {
         return $this->contentItems[$this->currentIndex];
     }
